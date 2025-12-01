@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI를 활용한 공학 저널 | Engineering Insight</title>
+    <!-- Tailwind CSS CDN 로드 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 커스텀 스타일 및 폰트 설정 */
+        body {
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            background-color: #f4f7f9; /* 연한 배경 */
+        }
+        /* 섹션 제목 강조 스타일 */
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 8px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 4px;
+            background-color: #3b82f6; /* 파란색 언더라인 */
+            border-radius: 2px;
+        }
+    </style>
+    <!-- Inter 및 Noto Sans KR 폰트 로드 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body class="text-gray-800">
+
+    <!-- 1. 네비게이션 바 -->
+    <header class="sticky top-0 z-50 bg-white shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold text-blue-600">
+                <a href="#home">AI&공학 분야</a>
+            </h1>
+            <nav class="hidden md:flex space-x-6 text-lg font-medium">
+                <a href="#trending" class="hover:text-blue-600 transition duration-300">최신 주제</a>
+                <a href="#journals" class="hover:text-blue-600 transition duration-300">핵심 저널</a>
+                <a href="#resources" class="hover:text-blue-600 transition duration-300">학습 자료</a>
+            </nav>
+            <button id="menu-button" class="md:hidden text-gray-700 hover:text-blue-600 focus:outline-none">
+                <!-- 햄버거 아이콘 (SVG) -->
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <!-- 모바일 메뉴 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-inner pb-2">
+            <a href="#trending" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 transition duration-300">최신 주제</a>
+            <a href="#journals" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 transition duration-300">핵심 저널</a>
+            <a href="#resources" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 transition duration-300">학습 자료</a>
+        </div>
+    </header>
+
+    <!-- 2. 히어로 섹션 (변동 없음) -->
+    <section id="home" class="bg-blue-600 text-white py-20 md:py-32 shadow-xl">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-xl md:text-2xl font-light mb-4">AI를 활용한</p>
+            <h2 class="text-4xl md:text-6xl font-black mb-6">최신 공학 트렌드</h2>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">
+                복잡한 공학 논문과 빠르게 변화하는 공학 트렌드를 여기서 쉽게 만나보세요.
+            </p>
+            <a href="#trending" class="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-50 transition duration-300 transform hover:scale-105">
+                트렌드 바로가기
+            </a>
+        </div>
+    </section>
+
+    <!-- 3. 요즘 뜨는 주제 (Trending Topics) 섹션 - 내용 업데이트 -->
+    <section id="trending" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl md:text-4xl font-extrabold text-center mb-12 section-title mx-auto">요즘 뜨는 핵심 공학 주제</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- 주제 카드 1: 인공지능 (AI) - 해외 논문 번역본 스타일 적용 -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 border-t-4 border-blue-500">
+                    <h4 class="text-2xl font-bold mb-3 text-blue-700">인공지능 & 머신러닝 (AI & ML)</h4>
+                    <p class="text-gray-500 mb-2 font-semibold">▶ 해외 논문 요약</p>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        최근 '트랜스포머 아키텍처' 기반 LLM(대규모 언어 모델)의 확장성과 효율성 증대에 대한 연구가 주를 이룹니다. 특히, 모델의 추론 속도를 높이고 메모리 사용량을 줄이는 경량화(Quantization) 기술이 엣지 디바이스와 같은 저사양 환경 적용을 위한 핵심 과제로 부각되고 있습니다.
+                    </p>
+                    <a href="https://scholar.google.co.kr/scholar?q=Transformer+Architecture+LLM+Quantization" target="_blank" class="text-blue-500 hover:text-blue-700 font-semibold flex items-center">
+                        원문 논문 더 찾아보기
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+
+                <!-- 주제 카드 2: 지속 가능한 기술 (Sustainable Tech) - 해외 논문 번역본 스타일 적용 -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 border-t-4 border-green-500">
+                    <h4 class="text-2xl font-bold mb-3 text-green-700">지속 가능한 에너지 및 친환경 기술</h4>
+                    <p class="text-gray-500 mb-2 font-semibold">▶ 해외 논문 요약</p>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        '차세대 전고체 배터리(Solid-State Battery)'는 에너지 밀도를 극대화하고 안정성을 높이는 방향으로 연구가 집중되고 있습니다. 기존 액체 전해질의 한계를 극복하기 위한 새로운 고체 전해질 물질의 이온 전도도 개선 방안이 주요 연구 주제로 다뤄지고 있습니다.
+                    </p>
+                    <a href="https://scholar.google.co.kr/scholar?q=Solid-State+Battery+Ion+Conductivity" target="_blank" class="text-green-500 hover:text-green-700 font-semibold flex items-center">
+                        원문 논문 더 찾아보기
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+
+                <!-- 주제 카드 3: 양자 컴퓨팅 & 반도체 - 해외 논문 번역본 스타일 적용 -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 border-t-4 border-purple-500">
+                    <h4 class="text-2xl font-bold mb-3 text-purple-700">양자 기술 & 첨단 반도체</h4>
+                    <p class="text-gray-500 mb-2 font-semibold">▶ 해외 논문 요약</p>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        현재 'NISQ(잡음이 많은 중간 규모 양자)' 장치의 기술적 제약 속에서, 양자 컴퓨터의 잠재력을 극대화하기 위한 양자 소프트웨어 공학(QSE)의 원칙과 방법론을 정립하는 것이 핵심입니다. 하드웨어의 한계를 극복하는 소프트웨어적 접근이 강조됩니다.
+                    </p>
+                    <a href="https://scholar.google.co.kr/scholar?q=Quantum+Software+Engineering+NISQ" target="_blank" class="text-purple-500 hover:text-purple-700 font-semibold flex items-center">
+                        원문 논문 더 찾아보기
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 핵심 공학 저널 링크 (Journals) 섹션 - 국내 사이트 추가 -->
+    <section id="journals" class="py-16 md:py-24 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl md:text-4xl font-extrabold text-center mb-12 section-title mx-auto">필수 공학 저널 및 학술 데이터베이스</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+
+                <!-- 저널 링크 1: IEEE Xplore -->
+                <a href="https://ieeexplore.ieee.org/Xplore/home.jsp" target="_blank" class="block p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border-l-4 border-red-600">
+                    <p class="text-2xl font-bold text-red-600 mb-2">IEEE Xplore</p>
+                    <p class="text-sm text-gray-600">전기, 전자, 컴퓨터 공학 분야의 세계 최대 논문 데이터베이스.</p>
+                </a>
+
+                <!-- 저널 링크 2: Nature Energy -->
+                <a href="https://www.nature.com/nenergy/" target="_blank" class="block p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border-l-4 border-lime-600">
+                    <p class="text-2xl font-bold text-lime-600 mb-2">Nature Energy</p>
+                    <p class="text-sm text-gray-600">에너지 생산, 저장 등 지속 가능성 연구 관련 최고 권위 저널.</p>
+                </a>
+
+                <!-- 저널 링크 3: Science Robotics -->
+                <a href="https://www.science.org/journal/scirobotics" target="_blank" class="block p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border-l-4 border-indigo-600">
+                    <p class="text-2xl font-bold text-indigo-600 mb-2">Science Robotics</p>
+                    <p class="text-sm text-gray-600">로봇 공학 분야의 최신 연구와 혁신적인 기술을 다루는 저널.</p>
+                </a>
+
+                <!-- 저널 링크 4: KCI (한국학술지인용색인) - 국내 추가 1 -->
+                <a href="https://www.kci.go.kr/kciportal/main.kci" target="_blank" class="block p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border-l-4 border-orange-500">
+                    <p class="text-2xl font-bold text-orange-500 mb-2">KCI (한국학술지)</p>
+                    <p class="text-sm text-gray-600">국내 학술지 및 논문 정보를 통합적으로 검색하고 평가하는 데이터베이스.</p>
+                </a>
+                
+                <!-- 저널 링크 5: RISS (학술연구정보서비스) - 국내 추가 2 -->
+                <a href="https://www.riss.kr/" target="_blank" class="block p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border-l-4 border-yellow-600">
+                    <p class="text-2xl font-bold text-yellow-600 mb-2">RISS (학술연구)</p>
+                    <p class="text-sm text-gray-600">국내외 학술 논문, 학위 논문, 연구 보고서 등 종합 정보 서비스.</p>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 학습 자료 (Resources) 섹션 - 내용 업데이트 -->
+    <section id="resources" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl md:text-4xl font-extrabold text-center mb-12 section-title mx-auto">추가 학습 및 커뮤니티 자료</h3>
+            <div class="max-w-4xl mx-auto space-y-6">
+
+                 <!-- 자료 카드 1: MOOC 플랫폼 - edX로 변경 -->
+                <div class="flex items-center p-5 bg-gray-50 rounded-lg shadow hover:shadow-md transition duration-300">
+                    <span class="text-4xl text-blue-500 mr-4">🎓</span>
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-800">주요 MOOC (온라인 공개 강좌) 플랫폼</h4>
+                        <p class="text-gray-600">MIT, 하버드 등 명문대의 공학 강의를 수강해 보세요. edX와 국내 K-MOOC를 추천합니다.</p>
+                    </div>
+                    <a href="https://www.edx.org/learn/engineering" target="_blank" class="ml-auto text-blue-500 hover:text-blue-700 font-semibold whitespace-nowrap">edX 바로가기</a>
+                </div>
+
+                <!-- 자료 카드 2: YouTube 학습 채널 - 신규 추가 -->
+                <div class="flex items-center p-5 bg-gray-50 rounded-lg shadow hover:shadow-md transition duration-300">
+                    <span class="text-4xl text-red-600 mr-4">▶</span>
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-800">공학 지식 전문 YouTube 채널</h4>
+                        <p class="text-gray-600">Mark Rober, SmarterEveryDay, Lesics 등 시각 자료로 공학 원리를 쉽게 설명하는 채널들입니다.</p>
+                    </div>
+                    <a href="https://www.youtube.com/@SmarterEveryDay" target="_blank" class="ml-auto text-blue-500 hover:text-blue-700 font-semibold whitespace-nowrap">YouTube 바로가기</a>
+                </div>
+
+                <!-- 자료 카드 3: GitHub (오픈 소스) -->
+                <div class="flex items-center p-5 bg-gray-50 rounded-lg shadow hover:shadow-md transition duration-300">
+                    <span class="text-4xl text-gray-700 mr-4">💻</span>
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-800">GitHub 및 오픈 소스 프로젝트</h4>
+                        <p class="text-gray-600">실제 코딩 능력을 키우고 공학 프로젝트에 참여하며 실무 감각을 익혀보세요.</p>
+                    </div>
+                    <a href="https://github.com/topics/engineering" target="_blank" class="ml-auto text-blue-500 hover:text-blue-700 font-semibold whitespace-nowrap">바로가기</a>
+                </div>
+
+                <!-- 자료 카드 4: TED Talk (강연) -->
+                <div class="flex items-center p-5 bg-gray-50 rounded-lg shadow hover:shadow-md transition duration-300">
+                    <span class="text-4xl text-red-500 mr-4">🎤</span>
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-800">TED Talks 및 대중 강연</h4>
+                        <p class="text-gray-600">세계적인 공학자들의 비전과 미래 예측을 들으며 동기 부여를 얻으세요.</p>
+                    </div>
+                    <a href="https://www.ted.com/topics/engineering" target="_blank" class="ml-auto text-blue-500 hover:text-blue-700 font-semibold whitespace-nowrap">바로가기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. 푸터 (변동 없음) -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-4 text-gray-400">© 2025 별별 아카데미 20126 서용빈.AI를 활용한 웹 사이트 구상.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://github.com/seoyongbin/great-project">개발 과정 살펴보기</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 자바스크립트: 모바일 메뉴 토글 및 부드러운 스크롤링 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            // 햄버거 메뉴 토글 기능
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // 네비게이션 링크 클릭 시 메뉴 닫기 및 부드러운 스크롤링
+            document.querySelectorAll('nav a, #mobile-menu a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        const targetElement = document.querySelector(href);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80, // 헤더 높이만큼 빼서 정확한 위치로 스크롤
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                    // 모바일 메뉴 닫기
+                    if (!mobileMenu.classList.contains('hidden')) {
+                         mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
